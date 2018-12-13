@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "5f7122e6-a896-43b0-bf7f-74ad3127b643",
+    "name": "ONETOP_APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "用户",
+      "item": []
+    },
+    {
+      "name": "授权",
+      "item": [
+        {
+          "name": "用户登陆",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "dbdee0d8-f3c0-479e-80b2-4624d88e7798",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  " ",
+                  "// 把responseBody转为json字符串",
+                  "var data = JSON.parse(responseBody);",
+                  "// 设置环境变量token，供后面的接口引用",
+                  "pm.environment.set(\"token\", data.data);",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}login?username=abcd5&password=123456",
+              "host": [
+                "{{base_url}}login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "abcd5"
+                },
+                {
+                  "key": "password",
+                  "value": "123456"
+                }
+              ]
+            },
+            "description": "会员登陆"
+          },
+          "response": []
+        },
+        {
+          "name": "会员注册",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "abcde4",
+                  "description": "用户名",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "description": "密码",
+                  "type": "text"
+                },
+                {
+                  "key": "promo_code",
+                  "value": "",
+                  "description": "邀请码",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}register",
+              "host": [
+                "{{base_url}}register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "代理注册",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "agent4",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "type": "text"
+                },
+                {
+                  "key": "promo_code",
+                  "value": "12352",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}agent/register",
+              "host": [
+                "{{base_url}}agent"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "取款",
+      "item": [
+        {
+          "name": "用户取款记录",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}withdraws?token={{token}}",
+              "host": [
+                "{{base_url}}withdraws"
+              ],
+              "query": [
+                {
+                  "key": "token",
+                  "value": "{{token}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

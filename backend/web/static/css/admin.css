@@ -1,0 +1,117 @@
+.logo-name {
+    background: url('../img/logo.png') no-repeat center;
+    -webkit-background-size: 300px;
+    background-size: 300px 69px;
+}
+
+.navbar-header .fa-outdent {
+    display: inline-block;
+}
+
+.navbar-header .fa-indent {
+    display: none;
+}
+
+.mini-navbar .navbar-header .fa-outdent {
+    display: none;
+}
+
+.mini-navbar .navbar-header .fa-indent {
+    display: inline-block;
+}
+
+.profile-element {
+    padding: 12px 0 5px;
+}
+
+.profile-element p {
+    padding-top: 5px;
+    font-size: 16px;
+    color: #999;
+}
+
+.nav .nav-header {
+    padding: 0;
+    text-align: center;
+}
+
+.toolbar {
+    padding: 10px;
+    background: #f9f9fc;
+}
+
+.toolbar .toolbar-actions {
+    width: 20%;
+    float: left;
+    padding: 5px;
+}
+
+.toolbar .toolbar-searchs {
+    float: right;
+    width: 80%;
+}
+
+.toolbar .toolbar-searchs input {
+    width: 120px;
+}
+
+.toolbar .toolbar-searchs .form-group {
+    margin: 5px 10px 5px 0;
+}
+
+.table th a.desc:after, .table th a.asc:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.table th a.desc:after {
+    content: "\f0d7";
+}
+
+.table th a.asc:after {
+    content: "\f0d8";
+}
+
+.form-horizontal .control-label {
+    padding-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.ui-widget.ui-widget-content {
+    border: 0;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.ui-widget-header {
+    border: 0;
+    border-bottom: 1px solid #e7eaec;
+    background: #ffffff;
+    color: #222222;
+    font-weight: bold;
+}
+
+.ui-widget-content .ui-state-default {
+    border: 1px solid #ffffff;
+    border-bottom: 0;
+    border-radius: 0;
+    background: #ffffff;
+    font-weight: normal;
+    color: #555555;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-active {
+    border: 1px solid #e7eaec;
+    border-bottom: 0;
+
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-hover {
+    background: #f9f9fc;
+}
